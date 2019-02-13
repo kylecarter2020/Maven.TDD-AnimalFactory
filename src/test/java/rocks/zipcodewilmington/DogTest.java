@@ -28,4 +28,76 @@ public class DogTest {
         String dogName = dog.getName();
         Assert.assertEquals(dogName, givenName);
     }
+
+    @Test
+    public void testDog() {
+        // Given (a name exists and a dog exists)
+        Dog dog = new Dog(null, null, null);
+        String givenName = "Milo";
+
+        // When (a dog's name is set to the given name)
+        dog.setName(givenName);
+
+        // Then (we expect to get the given name from the dog)
+        String dogName = dog.getName();
+        Assert.assertEquals(dogName, givenName);
+    }
+
+    @Test
+    public void testSpeak() {
+        // Given (a name exists and a dog exists)
+        Dog dog = new Dog(null, null, null);
+        String givenName = "Milo";
+
+        // When (a dog's name is set to the given name)
+        dog.setName(givenName);
+
+        // Then (we expect to get the given name from the dog)
+        String dogName = dog.getName();
+        Assert.assertEquals(dogName, givenName);
+    }
+
+    @Test
+    public void testSetBirthDate() {
+        // Given (a name exists and a dog exists)
+        Dog dog = new Dog(null, null, null);
+        String givenName = "Milo";
+
+        // When (a dog's name is set to the given name)
+        dog.setName(givenName);
+
+        // Then (we expect to get the given name from the dog)
+        String dogName = dog.getName();
+        Assert.assertEquals(dogName, givenName);
+    }
+
+    @Test
+    public void testEat() {
+        // Given (a name exists and a dog exists)
+        Dog dog = new Dog(null, null, null);
+        String givenName = "Milo";
+
+        // When (a dog's name is set to the given name)
+        dog.setName(givenName);
+
+        // Then (we expect to get the given name from the dog)
+        String dogName = dog.getName();
+        Assert.assertEquals(dogName, givenName);
+    }
+
+    @Test
+    public void testGetID() {
+        // Given (a name exists and a dog exists)
+        Dog dog = new Dog(null, null, null);
+        String givenName = "Milo";
+
+        // When (a dog's name is set to the given name)
+        dog.setName(givenName);
+
+        // Then (we expect to get the given name from the dog)
+        String dogName = dog.getName();
+        Assert.assertEquals(dogName, givenName);
+    }
+
+
 }

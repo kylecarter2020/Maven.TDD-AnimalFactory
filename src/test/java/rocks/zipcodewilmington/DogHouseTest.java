@@ -1,5 +1,6 @@
 package rocks.zipcodewilmington;
 
+import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Dog;
 import rocks.zipcodewilmington.animals.animal_creation.AnimalFactory;
@@ -30,5 +31,61 @@ public class DogHouseTest {
 
         // Then
         DogHouse.getNumberOfDogs();
+    }
+
+    @Test
+    public void testAddDog() {
+        // Given (a name exists and a dog exists)
+        Dog dog = new Dog(null, null, null);
+        String givenName = "Milo";
+
+        // When (a dog's name is set to the given name)
+        dog.setName(givenName);
+
+        // Then (we expect to get the given name from the dog)
+        String dogName = dog.getName();
+        Assert.assertEquals(dogName, givenName);
+    }
+
+    @Test
+    public void testRemoveDogById() {
+        // Given (a name exists and a dog exists)
+        Dog dog = new Dog(null, null, null);
+        String givenName = "Milo";
+
+        // When (a dog's name is set to the given name)
+        dog.setName(givenName);
+
+        // Then (we expect to get the given name from the dog)
+        String dogName = dog.getName();
+        Assert.assertEquals(dogName, givenName);
+    }
+
+    @Test
+    public void testRemoveDog() {
+        // Given (a name exists and a dog exists)
+        Dog dog = new Dog(null, null, null);
+        String givenName = "Milo";
+
+        // When (a dog's name is set to the given name)
+        dog.setName(givenName);
+
+        // Then (we expect to get the given name from the dog)
+        String dogName = dog.getName();
+        Assert.assertEquals(dogName, givenName);
+    }
+
+    @Test
+    public void testGetDogByID() {
+        // Given (a name exists and a dog exists)
+        Dog dog = new Dog(null, null, null);
+        String givenName = "Milo";
+
+        // When (a dog's name is set to the given name)
+        dog.setName(givenName);
+
+        // Then (we expect to get the given name from the dog)
+        String dogName = dog.getName();
+        Assert.assertEquals(dogName, givenName);
     }
 }
