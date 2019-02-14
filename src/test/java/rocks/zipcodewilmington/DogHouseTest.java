@@ -25,12 +25,14 @@ public class DogHouseTest {
         Date birthDate = new Date();
         Dog animal = AnimalFactory.createDog(name, birthDate);
         DogHouse.clear();
+        int numberOfDogs = 1;
 
         // When
         DogHouse.add(animal);
 
         // Then
-        DogHouse.getNumberOfDogs();
+        int actualNumberOfDogs = DogHouse.getNumberOfDogs();
+        Assert.assertEquals(numberOfDogs, actualNumberOfDogs);
     }
 
     @Test
