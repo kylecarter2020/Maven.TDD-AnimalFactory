@@ -2,7 +2,11 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Dog;
+import rocks.zipcodewilmington.animals.Mammal;
+
+import java.util.Date;
 
 /**
  * @author leon on 4/19/18.
@@ -31,72 +35,102 @@ public class DogTest {
 
     @Test
     public void testDog() {
-        // Given (a name exists and a dog exists)
-        Dog dog = new Dog(null, null, null);
-        String givenName = "Milo";
+        // Given
+        String name = "Milo";
+        Date birthDate = new Date();
+        Integer id = 12345;
+        Dog dog = new Dog(name, birthDate, id);
 
-        // When (a dog's name is set to the given name)
-        dog.setName(givenName);
+        // When
+        String actualName = dog.getName();
+        Date actualBirthDate = dog.getBirthDate();
+        Integer actualId = dog.getId();
 
-        // Then (we expect to get the given name from the dog)
-        String dogName = dog.getName();
-        Assert.assertEquals(dogName, givenName);
+        // Then
+        Assert.assertEquals(name, actualName);
+        Assert.assertEquals(birthDate, actualBirthDate);
+        Assert.assertEquals(id, actualId);
     }
 
     @Test
     public void testSpeak() {
-        // Given (a name exists and a dog exists)
+        // Given
         Dog dog = new Dog(null, null, null);
-        String givenName = "Milo";
+        String expectedBark = "bark!";
 
-        // When (a dog's name is set to the given name)
-        dog.setName(givenName);
+        // When
+        String actualBark = dog.speak();
 
-        // Then (we expect to get the given name from the dog)
-        String dogName = dog.getName();
-        Assert.assertEquals(dogName, givenName);
+        // Then
+        Assert.assertEquals(expectedBark, actualBark);
     }
 
     @Test
     public void testSetBirthDate() {
-        // Given (a name exists and a dog exists)
+        // Given
         Dog dog = new Dog(null, null, null);
-        String givenName = "Milo";
+        Date birthDate = new Date();
 
-        // When (a dog's name is set to the given name)
-        dog.setName(givenName);
+        // When
+        dog.setBirthDate(birthDate);
 
-        // Then (we expect to get the given name from the dog)
-        String dogName = dog.getName();
-        Assert.assertEquals(dogName, givenName);
+        // Then
+        Date actualBirthDate = dog.getBirthDate();
+        Assert.assertEquals(birthDate, actualBirthDate);
     }
 
     @Test
     public void testEat() {
-        // Given (a name exists and a dog exists)
+        // Given
         Dog dog = new Dog(null, null, null);
-        String givenName = "Milo";
+        Food food = new Food();
+        int numberOfMeals = 2;
 
-        // When (a dog's name is set to the given name)
-        dog.setName(givenName);
+        // When
+        dog.eat(food);
+        dog.eat(food);
 
-        // Then (we expect to get the given name from the dog)
-        String dogName = dog.getName();
-        Assert.assertEquals(dogName, givenName);
+        // Then
+        int actualNumberOfMeals = dog.getNumberOfMealsEaten();
+        Assert.assertEquals(numberOfMeals, actualNumberOfMeals);
     }
 
     @Test
     public void testGetID() {
         // Given (a name exists and a dog exists)
-        Dog dog = new Dog(null, null, null);
-        String givenName = "Milo";
+        int id = 23456;
+        Dog dog = new Dog(null, null, id);
 
-        // When (a dog's name is set to the given name)
-        dog.setName(givenName);
+        // When
+        int actualId = dog.getId();
 
-        // Then (we expect to get the given name from the dog)
-        String dogName = dog.getName();
-        Assert.assertEquals(dogName, givenName);
+        // Then
+        Assert.assertEquals(id, actualId);
+    }
+
+    @Test
+    public void testAnimalInheritance() {
+        //Given
+        Dog dog;
+
+        //When
+        dog = new Dog(null, null, null);
+
+        //Then
+        Assert.assertTrue( dog instanceof Animal);
+
+    }
+
+    @Test
+    public void testMammalInheritance() {
+        //Given
+        Dog dog;
+
+        //When
+        dog = new Dog(null, null, null);
+
+        //Then
+        Assert.assertTrue( dog instanceof Mammal);
     }
 
 

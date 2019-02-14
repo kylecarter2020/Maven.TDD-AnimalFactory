@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * @author leon on 4/19/18.
  */
-public class CatTest {
+public class  CatTest {
     // TODO - Create tests for `void setName(String name)`
     // TODO - Create tests for `speak`
     // TODO - Create tests for `setBirthDate(Date birthDate)`
